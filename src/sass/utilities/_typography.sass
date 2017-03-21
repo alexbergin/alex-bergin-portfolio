@@ -1,0 +1,33 @@
+h1, h2, h3, h4, p
+	color: inherit
+
+h1, h2
+	@include contain( font-size, 10vw, 32px, 128px )
+	text-transform: uppercase
+	letter-spacing: 0.1em
+	line-height: 90%
+
+h1
+	font-family: $bold-font
+
+h2
+	font-family: $light-font
+
+h3
+	@include contain( font-size, 6vw, 18px, 64px )
+	font-family: $regular-font
+	letter-spacing: 0.05em
+	line-height: 100%
+
+h4, p
+	@include contain( font-size, 4vw, 11px, 21px )
+	line-height: 100%
+
+h4
+	font-family: $light-font
+	text-transform: uppercase
+	letter-spacing: 0.05em
+
+p
+	letter-spacing: 0.025em
+	font-family: $regular-font

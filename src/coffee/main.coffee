@@ -1,7 +1,9 @@
+Router = require "./modules/Router"
+
 class Site
 
 	constructor: ->
 
-		console.log "hello world"
+		@.router = new Router @
 
 new Site

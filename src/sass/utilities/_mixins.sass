@@ -1,0 +1,81 @@
+// disable highlighting and android highlighting on buttons
+=no-select
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+// just incase you need to re-enable selecting
+=yes-select
+	-webkit-tap-highlight-color: auto
+	-webkit-touch-callout: auto
+	-webkit-user-select: auto
+	-khtml-user-select: auto
+	-moz-user-select: auto
+	-ms-user-select: auto
+	user-select: auto
+
+// revert to a more consistant default state
+=element-reset
+	-webkit-appearance: none
+	-moz-appearance: none
+	-ms-appearance: none
+	outline: none
+	border: none
+	appearance: none
+	background: none
+	box-shadow: none
+	border-radius: 0
+	padding: 0
+	margin: 0
+
+// used to get unitless values in the mixin
+@function strip-units($value)
+	@return $value / ( $value * 0 + 1 )
+
+=contain( $properties , $scale , $min: 0 , $max: 0 )
+	
+	// if it's a single property, convert it to a list
+	@if type-of( $properties ) == string
+		$properties: ( $properties )
+	
+	// set the default scaling of the properties
+	@each $property in $properties
+		#{$property}: #{$scale}
+
+	// find out which viewport unit we're using and then get
+	// unitless values for the math we need to do later
+	$viewport-unit: unit( $scale )
+	$min-unit: unit( $min )
+	$max-unit: unit( $max )
+	$min: strip-units( $min )
+	$max: strip-units( $max )
+	$scale: strip-units( $scale )
+
+	// use the viewport unit to know which max we need to use
+	// ( vw = width, vh = height )
+	$query-property: width
+	@if $viewport-unit == vh
+		$query-property: height
+	
+	// if a minimum has been provided, make sure it overrides the default scaling
+	@if $min > 0
+		
+		// get the point at which the minimum unit will be reached given the ideal scale
+		@media screen and ( max-#{$query-property}: #{$min * ( 100 / $scale )}#{$min-unit} )
+			@each $property in $properties
+				#{$property}: #{$min}#{$min-unit}
+
+	// if a maximum has been provided, make sure it overrides the default scaling
+	@if $max > 0
+
+		// get the point at which the maximum unit will be reached given the ideal scale
+		@media screen and ( min-#{$query-property}: #{$max * ( 100 / $scale )}#{$max-unit} )
+			@each $property in $properties
+				#{$property}: #{$max}#{$max-unit}
+
+.diagonal-background
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIElEQVQImWP8//8/AwwwMjL+Z0LmMDAwMDJAVSCUoXMAqJUKAQ2FJYUAAAAASUVORK5CYII=")

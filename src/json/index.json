@@ -1,4 +1,4 @@
 {
 	"pageName": "Home",
-	"message": "Hello world, looks like the build updates."
+	"message": "Hello world, looks like the build updates. <a href='#/mr-legs'>Here is an even longer link</a> is a link test."
 }

@@ -27,22 +27,19 @@ module.exports = class Router extends SubClass
 
 		for section in @.sections
 			if route is section.getAttribute "data-route"
-				rendered = true
-				@.show section
+				rendered = section
 			else
 				@.hide section
 
-		if not rendered then window.location.hash = ""
+		if rendered is false then window.location.hash = ""
+		else @.show rendered
 
 	show: ( section ) ->
 
-		section.classList.add "displayed"
+		section.classList.remove "not-visible"
 		section.onShow? section
 
-		clearTimeout section.renderTimer
-		section.renderTimer = setTimeout =>
-			section.classList.add "visible"
-		, 30
+		requestAnimationFrame => section.classList.add "visible"
 
 
 	hide: ( section ) ->
@@ -54,5 +51,5 @@ module.exports = class Router extends SubClass
 		section.renderTimer = setTimeout =>
 			section.onHidden? section
 			section.scrollTop = 0
-			section.classList.remove "displayed"
+			section.classList.add "not-visible"
 		, 250

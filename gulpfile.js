@@ -78,10 +78,7 @@ gulp.task('styles', function() {
 gulp.task('templates', function () {
   
   var pages = [ 
-        "index",
-        "about",
-        "resume",
-        "contact"
+        "index"
       ],
       projects = [ 
         "mr-legs", 
@@ -152,6 +149,6 @@ gulp.task('serve', ['default'], function() {
 gulp.task('default', [
   'templates',
   'scripts',
-  'styles',
-  'assets'
+  'assets',
+  'styles'
 ]);

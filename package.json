@@ -26,8 +26,8 @@
   "dependencies": {
     "animejs": "^2.0.1",
     "classlist-polyfill": "1.0.3",
+    "pixi.js": "4.4.3",
     "promise-polyfill": "^6.0.2",
-    "tinycolor2": "1.4.1",
-    "two.js": "0.6.0"
+    "tinycolor2": "1.4.1"
   }
 }

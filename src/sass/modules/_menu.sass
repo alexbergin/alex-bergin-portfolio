@@ -1,0 +1,21 @@
+menu
+	transition: transform 0.35s cubic-bezier(.45,0,.26,1)
+	width: 400px
+	background: $red
+	height: 100%
+	position: absolute
+	top: 0
+	left: 0
+	transform: translate( -100%, 0 )
+
+	&.open
+		transform: translate( 0, 0 )
+
+		& ~ main
+			transform: translate( 400px, 0 )
+
+	@media screen and ( max-width: 400px )
+		width: 100%
+
+		&.open ~ main
+			transform: translate( 100%, 0 )

@@ -36,9 +36,10 @@ module.exports = class Router extends SubClass
 
 	show: ( section ) ->
 
+		clearTimeout section.renderTimer
+		section.renderTimer = null
 		section.classList.remove "not-visible"
 		section.onShow? section
-
 		requestAnimationFrame => section.classList.add "visible"
 
 
@@ -47,9 +48,10 @@ module.exports = class Router extends SubClass
 		section.classList.remove "visible"
 		section.onHide? section
 
-		clearTimeout section.renderTimer
-		section.renderTimer = setTimeout =>
-			section.onHidden? section
-			section.scrollTop = 0
-			section.classList.add "not-visible"
-		, 250
+		if section.renderTimer is null
+			section.renderTimer = setTimeout =>
+				section.renderTimer = null
+				section.onHidden? section
+				section.scrollTop = 0
+				section.classList.add "not-visible"
+			, 400

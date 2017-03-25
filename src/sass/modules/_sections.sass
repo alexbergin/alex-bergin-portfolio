@@ -1,8 +1,10 @@
 section
 	position: absolute
 	overflow-x: hidden
-	transition: transform 0.25s ease-in-out
+	transition: transform 0.4s cubic-bezier(.45,0,.26,1), opacity 0.4s ease-in-out
 	transform: translate( -100%, 0 )
+	opacity: 0
+	font-size: 0
 	height: 100%
 	width: 100%
 	left: 0
@@ -13,11 +15,85 @@ section
 
 	&.visible
 		transform: translate( 0, 0 )
+		opacity: 1
 
 		& ~ section
 			transform: translate( 100%, 0 )
 
+	.white-background
+		background: $white
+
+	.white-text
+		color: $white
+
+	.black-background
+		background: $black
+
+	.black-text
+		color: $black
+
+	.yellow-background
+		background: $yellow
+
+	.yellow-text
+		color: $yellow
+
+	.red-background
+		background: $red
+
+	.red-text
+		color: $red
+
+	.green-background
+		background: $green
+
+	.green-text
+		color: $green
+
+	.blue-background
+		background: $blue
+
+	.blue-text
+		color: $blue
+
+	.transparent-background
+		background: transparent
+
 	.full-height
 		min-height: 100vh
-		background: $yellow
-		color: $black
+		padding-bottom: 0
+		padding-top: 0
+
+	.column, .block
+		@include contain(( padding-right, padding-left ), 12vw, 40px, 120px )
+		@include contain(( padding-top, padding-bottom ), 4vw, 15px, 120px )
+		box-sizing: border-box
+
+		@media screen and ( max-width: 500px )
+			@include contain(( padding-right, padding-left ), 4vw, 15px, 120px )
+
+		&.no-pad
+			padding: 0
+
+	.column
+		display: inline-block
+		vertical-align: top
+		width: 50%
+		max-width: 600px
+
+		@media screen and ( max-width: 900px )
+			display: block
+			max-width: 100%
+			width: 100%
+
+	.block
+		display: block
+
+	.vertical-center-container
+		@include contain((left, right), 12vw, 40px, 120px )
+		@media screen and ( max-width: 500px )
+			@include contain((left, right), 4vw, 15px, 120px )
+		text-align: center
+		transform: translate( 0, -50% )
+		position: absolute
+		top: 50%

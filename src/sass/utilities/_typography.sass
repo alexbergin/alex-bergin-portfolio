@@ -1,7 +1,7 @@
 h1, h2, h3, h4, p
 	color: inherit
 	position: relative
-	line-height: 105%
+	line-height: 150%
 
 	a
 		background: none
@@ -13,9 +13,10 @@ h1, h2, h3, h4, p
 			color: $white
 			box-shadow: 0 -1000px 0 0 $black inset
 h1, h2
-	@include contain( font-size, 10vw, 32px, 128px )
+	@include contain( font-size, 8.5vw, 32px, 128px )
 	text-transform: uppercase
 	letter-spacing: 0.1em
+	line-height: 100%
 
 h1
 	font-family: $bold-font
@@ -38,11 +39,10 @@ h3
 		font-family: $regular-italic-font
 
 h4, p
-	@include contain( font-size, 4vw, 11px, 21px )
+	@include contain( font-size, 3.5vw, 12px, 18px )
 
 h4
 	font-family: $light-font
-	text-transform: uppercase
 	letter-spacing: 0.05em
 
 	a

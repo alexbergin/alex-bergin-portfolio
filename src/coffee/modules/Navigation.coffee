@@ -31,9 +31,12 @@ module.exports = class Navigation extends SubClass
 		for page, i in @.pages
 			if page is current then index = i
 		index += direction
+		i = index
 
 		if index > @.pages.length - 1 then index = @.pages.length - 1
 		if index < 0 then index = 0
+
+		if i is index then @.root.background.setGlobalAcceleration 8 * -direction, 0
 
 		hash = @.pages[index].getAttribute "data-route"
 		window.location.hash = hash

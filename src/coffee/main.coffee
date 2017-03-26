@@ -3,6 +3,7 @@
 Background = require "./modules/Background"
 Navigation = require "./modules/Navigation"
 Router = require "./modules/Router"
+Sections = require "./modules/Sections"
 
 class Site
 
@@ -11,5 +12,6 @@ class Site
 		@.router = new Router @
 		@.navigation = new Navigation @
 		@.background = new Background @
+		@.sections = new Sections @
 
 window.Site = new Site

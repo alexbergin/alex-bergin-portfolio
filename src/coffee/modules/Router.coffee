@@ -52,6 +52,7 @@ module.exports = class Router extends SubClass
 			section.renderTimer = setTimeout =>
 				section.renderTimer = null
 				section.onHidden? section
+				section.lastScroll = 0
 				section.scrollTop = 0
 				section.classList.add "not-visible"
 			, 400

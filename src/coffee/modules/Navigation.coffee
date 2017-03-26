@@ -15,13 +15,31 @@ module.exports = class Navigation extends SubClass
 		@.previousButton = document.querySelector "button.previous-page"
 		@.menuButton = document.querySelector "button.toggle-menu"
 		@.pages = document.querySelectorAll "section"
+		@.menu = document.querySelector "menu"
 
 	addListeners: ->
 
 		@.nextButton.addEventListener "click", => @.step 1
 		@.previousButton.addEventListener "click", => @.step -1
-		@.menuButton.addEventListener "click", =>
-			document.querySelector("menu").classList.toggle "open"
+		@.menuButton.addEventListener "click", @.toggleMenu
+
+	toggleMenu: =>
+
+		if @.menu.classList.contains( "open" ) then @.closeMenu()
+		else @.openMenu()
+
+	openMenu: ->
+
+		if @.menu.classList.contains( "open" ) isnt true
+			@.menu.classList.add "open"
+			@.root.background.setGlobalAcceleration 9, 0
+
+
+	closeMenu: ->
+
+		if @.menu.classList.contains( "open" ) is true
+			@.menu.classList.remove "open"
+			@.root.background.setGlobalAcceleration -9, 0
 
 	step: ( direction ) ->
 

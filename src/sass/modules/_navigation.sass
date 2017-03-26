@@ -7,6 +7,7 @@
 	border-color: $black
 	border-style: solid
 	position: fixed
+	transition: transform 0.25s ease-in-out
 
 	@media screen and ( max-width: 500px )
 		@include contain(border-width, 0.8vw, 2px, 4px )
@@ -98,3 +99,12 @@
 	@media screen and ( max-width: 500px )
 		border-left: none
 		left: 0
+
+@media screen and ( max-width: 500px )
+	.first-page-visible ~ .previous-page, .last-page-visible ~ .next-page, menu.open ~ .next-page, menu.open ~ .previous-page
+		*, &:before, &:after
+			opacity: 0
+
+@media screen and ( min-width: 501px )
+	.first-page-visible ~ .previous-page, .last-page-visible ~ .next-page, menu.open ~ .next-page, menu.open ~ .previous-page
+		transform: scale( 0 )

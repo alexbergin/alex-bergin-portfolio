@@ -15,6 +15,7 @@ module.exports = class Background extends SubClass
 	width: window.innerWidth
 	height: window.innerHeight
 	density: window.devicePixelRatio or 1
+	colors: [ Colors.red, Colors.green, Colors.blue, Colors.yellow ]
 	options:
 		shapes: 16
 		scale: 1
@@ -40,7 +41,6 @@ module.exports = class Background extends SubClass
 
 	makeShapes: ->
 
-		fills = [ Colors.red, Colors.green, Colors.blue, Colors.yellow ]
 		types = []
 
 		for shape of Shapes
@@ -49,7 +49,7 @@ module.exports = class Background extends SubClass
 		@.shapes = []
 		while @.shapes.length < @.options.shapes
 			type = types[ Math.floor( Math.random() * types.length )]
-			fill = fills[ Math.floor( Math.random() * fills.length )]
+			fill = @.colors[ Math.floor( Math.random() * @.colors.length )]
 			shape = Shapes[type] fill, @.density
 			@.app.stage.addChild shape
 			angle = Math.random() * 360 * ( Math.PI / 180 )
@@ -94,6 +94,13 @@ module.exports = class Background extends SubClass
 		@.physicis()
 		@.app.render()
 
+	randomizeColor: ( shape ) ->
+
+		color = @.colors[ Math.floor( Math.random() * @.colors.length )]
+
+		for graphic in shape.children
+			graphic.tint = color
+
 	physicis: ->
 
 		for shape in @.shapes
@@ -105,10 +112,25 @@ module.exports = class Background extends SubClass
 			if shape.children[0].rotation > 360 then shape.children[0].rotation -= 360
 			if shape.children[0].rotation < 0 then shape.children[0].rotation += 360
 
-			if shape.position.x < -200 then shape.position.x = @.width + 200
-			if shape.position.x > @.width + 200 then shape.position.x = -200
-			if shape.position.y < -200 then shape.position.y = @.height + 200
-			if shape.position.y > @.height + 200 then shape.position.y = -200
+			wrapped = false
+
+			if shape.position.x < -200
+				shape.position.x = @.width + 200
+				wrapped = true
+
+			if shape.position.x > @.width + 200
+				shape.position.x = -200
+				wrapped = true
+				
+			if shape.position.y < -200
+				shape.position.y = @.height + 200
+				wrapped = true
+				
+			if shape.position.y > @.height + 200 
+				shape.position.y = -200
+				wrapped = true
+				
+			if wrapped then @.randomizeColor shape
 
 		if Math.abs( @.globalVel.x ) > 0.01
 			@.globalVel.x *= 0.97

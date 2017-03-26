@@ -13,6 +13,7 @@ module.exports = class Router extends SubClass
 	getElements: ->
 
 		@.sections = document.querySelectorAll "section"
+		@.wrapper = document.querySelector "main"
 
 	addListeners: ->
 
@@ -24,12 +25,20 @@ module.exports = class Router extends SubClass
 		rendered = false
 
 		if route is "" then route = "#/"
+		index = null
 
-		for section in @.sections
+		for section, i in @.sections
 			if route is section.getAttribute "data-route"
 				rendered = section
+				index = i
 			else
 				@.hide section
+
+		@.wrapper.classList.remove "first-page-visible"
+		@.wrapper.classList.remove "last-page-visible"
+
+		if index is 0 then @.wrapper.classList.add "first-page-visible"
+		if index is @.sections.length - 1 then @.wrapper.classList.add "last-page-visible"
 
 		if rendered is false then window.location.hash = ""
 		else @.show rendered

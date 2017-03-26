@@ -38,10 +38,18 @@ h3
 	a
 		font-family: $regular-italic-font
 
-h4, p
+h4
+	@include contain( font-size, 6vw, 16px, 36px )
+	font-family: $regular-font
+	letter-spacing: 0.05em
+
+	a
+		font-family: $regular-italic-font
+
+h5, p
 	@include contain( font-size, 3.5vw, 12px, 18px )
 
-h4
+h5
 	font-family: $light-font
 	letter-spacing: 0.05em
 

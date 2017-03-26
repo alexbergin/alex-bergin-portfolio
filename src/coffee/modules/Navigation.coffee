@@ -31,15 +31,21 @@ module.exports = class Navigation extends SubClass
 	openMenu: ->
 
 		if @.menu.classList.contains( "open" ) isnt true
+			clearTimeout @.closeTimer
 			@.menu.classList.add "open"
-			@.root.background.setGlobalAcceleration 9, 0
-
+			if window.innerWidth <= 500
+				@.root.background.setGlobalAcceleration 0, -9
+			else
+				@.root.background.setGlobalAcceleration 9, 0
 
 	closeMenu: ->
 
 		if @.menu.classList.contains( "open" ) is true
 			@.menu.classList.remove "open"
-			@.root.background.setGlobalAcceleration -9, 0
+			if window.innerWidth <= 500
+				@.root.background.setGlobalAcceleration 0, 9
+			else
+				@.root.background.setGlobalAcceleration -9, 0
 
 	step: ( direction ) ->
 

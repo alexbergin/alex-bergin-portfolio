@@ -7,19 +7,17 @@
 	border-color: $black
 	border-style: solid
 	position: fixed
-	transition: transform 0.25s ease-in-out
+	transition: opacity 0.125s ease-in-out
+	z-index: 3
 
 	@media screen and ( max-width: 500px )
 		@include contain(border-width, 0.8vw, 2px, 4px )
-		background: $white
 
 
 .toggle-menu
 	@include contain(( top, left ), 1.5vw, 5px, 20px )
 	@media screen and ( max-width: 500px )
 		border-bottom: none
-		border-right: none
-		border-left: none
 		height: 55px
 		border-radius: 0
 		width: 34%
@@ -32,6 +30,7 @@
 		position: absolute
 		@include contain( height, 0.4vw, 2px, 4px )
 		@include contain( width, 1.75vw, 9px, 17px )
+		transition: transform 0.125s ease-in-out
 		background: $black
 		top: 50%
 		left: 50%
@@ -89,6 +88,7 @@
 
 	@media screen and ( max-width: 500px )
 		border-right: none
+		border-left: none
 		right: 0
 
 .previous-page
@@ -97,14 +97,15 @@
 		transform: translate( -47%, 0 ) rotate( -45deg )
 
 	@media screen and ( max-width: 500px )
+		border-right: none
 		border-left: none
 		left: 0
 
-@media screen and ( max-width: 500px )
-	.first-page-visible ~ .previous-page, .last-page-visible ~ .next-page, menu.open ~ .next-page, menu.open ~ .previous-page
-		*, &:before, &:after
-			opacity: 0
+.first-page-visible ~ .previous-page, .last-page-visible ~ .next-page, menu.open ~ .next-page, menu.open ~ .previous-page
+	opacity: 0
 
-@media screen and ( min-width: 501px )
-	.first-page-visible ~ .previous-page, .last-page-visible ~ .next-page, menu.open ~ .next-page, menu.open ~ .previous-page
-		transform: scale( 0 )
+menu.open ~ .toggle-menu
+	span:nth-of-type(1), span:nth-of-type(2)
+		transform: translate( -50%, -50% ) rotate( -405deg )
+	span:nth-of-type(3)
+		transform: translate( -50%, -50% ) rotate( 225deg )

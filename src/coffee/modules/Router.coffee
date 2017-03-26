@@ -13,6 +13,7 @@ module.exports = class Router extends SubClass
 	getElements: ->
 
 		@.sections = document.querySelectorAll "section"
+		@.links = document.querySelectorAll "menu a"
 		@.wrapper = document.querySelector "main"
 
 	addListeners: ->
@@ -34,6 +35,12 @@ module.exports = class Router extends SubClass
 			else
 				@.hide section
 
+		for link in @.links
+			if route is link.getAttribute "href"
+				link.classList.add "selected"
+			else
+				link.classList.remove "selected"
+
 		@.wrapper.classList.remove "first-page-visible"
 		@.wrapper.classList.remove "last-page-visible"
 
@@ -42,6 +49,12 @@ module.exports = class Router extends SubClass
 
 		if rendered is false then window.location.hash = ""
 		else @.show rendered
+
+		if @.root.navigation?
+			clearTimeout @.root.navigation.closeTimer
+			@.root.navigation.closeTimer = setTimeout =>
+				@.root.navigation.closeMenu()
+			, 350
 
 	show: ( section ) ->
 

@@ -6,7 +6,7 @@ module.exports =
 
 	box: ( fill, density ) ->
 
-		if density > 1 then density *= 0.75
+		if density > 1 then density *= 0.65
 
 		scale = 500 / ( 1.5 * ( density ))
 		graphics = new PIXI.Graphics()
@@ -23,7 +23,7 @@ module.exports =
 
 	circle: ( fill, density ) ->
 
-		if density > 1 then density *= 0.75
+		if density > 1 then density *= 0.65
 
 		scale = 150 / ( 1.5 * ( density ))
 		graphics = new PIXI.Graphics()
@@ -40,7 +40,7 @@ module.exports =
 
 	cross: ( fill, density ) ->
 
-		if density > 1 then density *= 0.75
+		if density > 1 then density *= 0.65
 
 		scale = 400 / ( 1.5 * ( density ))
 		graphics = new PIXI.Graphics()
@@ -58,7 +58,7 @@ module.exports =
 
 	triangle: ( fill, density ) ->
 
-		if density > 1 then density *= 0.75
+		if density > 1 then density *= 0.65
 
 		scale = 175 / ( 1.5 * ( density ))
 		graphics = new PIXI.Graphics()

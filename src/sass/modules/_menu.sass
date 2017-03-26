@@ -7,6 +7,54 @@ menu
 	top: 0
 	left: 0
 	transform: translate( -100%, 0 )
+	overflow: hidden
+	z-index: 3
+
+	.wrapper
+		overflow: hidden
+		overflow-y: scroll
+		position: absolute
+		@include contain(( left, right ), 3vw, 10px, 40px )
+		@include contain( top, 5.5vw, 26px, 70px )
+		bottom: 0
+		box-sizing: border-box
+
+		@media screen and ( max-width: 500px )
+			@include contain(( padding-top, padding-bottom ), 3vw, 10px, 20px )
+			text-align: center
+			top: 0
+			bottom: 55px
+
+	a
+		@include contain( padding, 3vw, 10px, 20px )
+		text-decoration: none
+		color: $black
+		display: block
+		position: relative
+
+		h4
+			transform: translate( 0, 10% )
+			position: relative
+
+		&.selected
+			&:before, &:after
+				content: ""
+				position: absolute
+				@include contain(width, 0.4vw, 2px, 4px )
+				background: $black
+				height: 100%
+				top: 0
+
+			&:before
+				left: 0
+
+			&:after
+				right: 0
+
+		& + a
+			@include contain(border-width, 0.4vw, 2px, 4px )
+			border-top-style: solid
+			border-top-color: $black
 
 	&.open
 		transform: translate( 0, 0 )
@@ -16,6 +64,7 @@ menu
 
 	@media screen and ( max-width: 500px )
 		width: 100%
+		transform: translate( 0, 100% )
 
 		&.open ~ main
-			transform: translate( 100%, 0 )
+			transform: translate( 0, -100% )

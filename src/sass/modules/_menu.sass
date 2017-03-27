@@ -28,7 +28,7 @@ menu
 			bottom: 55px
 
 	a
-		@include contain( padding, 3vw, 10px, 20px )
+		@include contain( padding, 1vw, 2px, 15px )
 		text-decoration: none
 		color: $black
 		display: block
@@ -40,6 +40,8 @@ menu
 			display: inline-block
 			border-style: solid
 			border-color: transparent
+			border-left: none
+			border-right: none
 
 			@include contain(border-width, 0.4vw, 2px, 4px )
 			@media screen and ( max-width: 500px )

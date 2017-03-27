@@ -68,6 +68,12 @@ module.exports = class Background extends SubClass
 
 	onResize: =>
 
+		document.body.classList.add "resizing"
+		clearTimeout @.resizeDebounce
+		@.resizeDebounce = setTimeout =>
+			document.body.classList.remove "resizing"
+		, 100
+
 		@.width = window.innerWidth
 		@.height = window.innerHeight
 
@@ -83,7 +89,7 @@ module.exports = class Background extends SubClass
 			@.app.renderer.view.style[prefix + "Origin"] = "top left"
 			@.app.renderer.view.style[prefix] = "scale(#{1/@.density})"
 
-		scale = Math.max( @.width, @.height ) / 1200
+		scale = ( Math.max( @.width, @.height ) / 1800 ) * @.density
 		for shape in @.shapes
 			shape.scale.x = shape.scale.y = scale
 

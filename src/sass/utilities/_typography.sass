@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, p
+h1, h2, h3, h4, p
 	color: inherit
 	position: relative
 	line-height: 150%
@@ -12,17 +12,25 @@ h1, h2, h3, h4, h5, p
 		&:hover
 			color: $white
 			box-shadow: 0 -1000px 0 0 $black inset
-h1, h2
+
+h1
 	@include contain( font-size, 8.5vw, 32px, 128px )
 	text-transform: uppercase
 	letter-spacing: 0.1em
 	line-height: 100%
 
-h1
+	& + h2, & + h3, & + h4, & + h5, & + p
+		@include contain( padding-top, 4.25vw, 16px, 64px )
+
 	font-family: $bold-font
 
 	a
 		font-family: $bold-italic-font
+
+h2, h3
+	@include contain( font-size, 6vw, 18px, 38px )
+	letter-spacing: 0.05em
+	line-height: 110%
 
 h2
 	font-family: $light-font
@@ -30,24 +38,31 @@ h2
 	a
 		font-family: $light-italic-font
 
+	& + h1, & + h3, & + h4, & + h5, & + p
+		@include contain( padding-top, 3vw, 9px, 19px )
+
 h3
-	@include contain( font-size, 6vw, 18px, 64px )
 	font-family: $regular-font
-	letter-spacing: 0.05em
 
 	a
 		font-family: $regular-italic-font
+
+	& + h1, & + h2, & + h4, & + h5, & + p
+		@include contain( padding-top, 3vw, 9px, 19px )
+
+h4, h5, p
+	@include contain( font-size, 4vw, 14px, 18px )
 
 h4
-	@include contain( font-size, 7vw, 16px, 32px )
-	font-family: $regular-font
-	letter-spacing: 0.05em
+	font-family: $bold-font
+	letter-spacing: 0.075em
+	text-transform: uppercase
 
 	a
-		font-family: $regular-italic-font
+		font-family: $bold-italic-font
 
-h5, p
-	@include contain( font-size, 3.5vw, 12px, 18px )
+	& + h1, & + h2, & + h3, & + h5, & + p
+		@include contain( padding-top, 2vw, 7px, 9px )
 
 h5
 	font-family: $light-font
@@ -56,9 +71,15 @@ h5
 	a
 		font-family: $light-italic-font
 
+	& + h1, & + h2, & + h3, & + h4, & + p
+		@include contain( padding-top, 2vw, 7px, 9px )
+
 p
 	letter-spacing: 0.025em
 	font-family: $regular-font
 
 	a
 		font-family: $regular-italic-font
+
+	& + h1, & + h2, & + h3, & + h4, & + h5
+		@include contain( padding-top, 2vw, 7px, 9px )

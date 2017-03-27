@@ -142,10 +142,10 @@ module.exports = class Background extends SubClass
 				
 			if wrapped then @.randomizeColor shape
 
-		if Math.abs( @.globalVel.x ) > 0.01
+		if Math.abs( @.globalVel.x ) > 0.05
 			@.globalVel.x *= 0.97
 		else @.globalVel.x = 0
 
-		if Math.abs( @.globalVel.y ) > 0.01
+		if Math.abs( @.globalVel.y ) > 0.05
 			@.globalVel.y *= 0.97
 		else @.globalVel.y = 0

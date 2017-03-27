@@ -5,6 +5,7 @@ section
 	transition: transform 0.4s cubic-bezier(.45,0,.26,1), opacity 0.4s ease-in-out
 	transform: translate( -100%, 0 )
 	opacity: 0
+	text-align: center
 	font-size: 0
 	height: 100%
 	width: 100%
@@ -22,43 +23,85 @@ section
 		& ~ section
 			transform: translate( 100%, 0 )
 
-	.white-background
+	.white-background, .white-left-background::before, .white-right-background::after
 		background: $white
+
+	.white-background
+		::selection
+			background: rgba( $black, 0.75 ) !important
+
+		::-moz-selection
+			background: rgba( $black, 0.75 ) !important
 
 	.white-text
 		color: $white
 
-	.black-background
+	.black-background, .black-left-background::before, .black-right-background::after
 		background: $black
+
+	.black-background
+		::selection
+			background: rgba( $white, 0.75 ) !important
+
+		::-moz-selection
+			background: rgba( $white, 0.75 ) !important
 
 	.black-text
 		color: $black
 
-	.yellow-background
+	.yellow-background, .yellow-left-background::before, .yellow-right-background::after
 		background: $yellow
+
+	.yellow-background
+		::selection
+			background: $red !important
+
+		::-moz-selection
+			background: $red !important
 
 	.yellow-text
 		color: $yellow
 
-	.red-background
+	.red-background, .red-left-background::before, .red-right-background::after
 		background: $red
+
+	.red-background
+		::selection
+			background: $yellow !important
+
+		::-moz-selection
+			background: $yellow !important
 
 	.red-text
 		color: $red
 
-	.green-background
+	.green-background, .green-left-background::before, .green-right-background::after
 		background: $green
+
+	.green-background
+		::selection
+			background: $blue !important
+
+		::-moz-selection
+			background: $blue !important
 
 	.green-text
 		color: $green
 
-	.blue-background
+	.blue-background, .blue-left-background::before, .blue-right-background::after
 		background: $blue
+
+	.blue-background
+		::selection
+			background: $green !important
+
+		::-moz-selection
+			background: $green !important
 
 	.blue-text
 		color: $blue
 
-	.transparent-background
+	.transparent-background, .transparent-left-background::before, .transparent-right-background::after
 		background: transparent
 
 	.full-height
@@ -66,22 +109,12 @@ section
 		padding-bottom: 0
 		padding-top: 0
 
-	.column, .block
-		@include contain(( padding-right, padding-left ), 12vw, 40px, 120px )
-		@include contain(( padding-top, padding-bottom ), 4vw, 15px, 120px )
-		box-sizing: border-box
-
-		@media screen and ( max-width: 500px )
-			@include contain(( padding-right, padding-left ), 4vw, 15px, 120px )
-
-		&.no-pad
-			padding: 0
-
 	.column
 		display: inline-block
 		vertical-align: top
 		width: 50%
 		max-width: 600px
+		text-align: left
 
 		@media screen and ( max-width: 900px )
 			display: block
@@ -90,9 +123,81 @@ section
 
 	.block
 		display: block
+		max-width: 1200px
+		overflow: hidden
+		width: 100%
+
+		& > .block
+			display: inline-block
+
+			@media screen and ( max-width: 1200px )
+				text-align: left
+
+		&:before, &:after
+			content: ""
+			position: absolute
+			z-index: 1
+			height: 100%
+			max-width: 600px
+			width: 50%
+			top: 0
+
+		&:before
+			right: 50%
+
+		&:after
+			left: 50%
+
+	.column, .block
+		@include contain(( padding-right, padding-left ), 6vw, 40px, 60px )
+		@include contain(( padding-top, padding-bottom ), 4vw, 15px, 60px )
+		box-sizing: border-box
+		position: relative
+		z-index: 2
+
+		@media screen and ( max-width: 500px )
+			@include contain(( padding-right, padding-left ), 4vw, 15px, 120px )
+
+		&.no-padding
+			padding: 0
+
+		&.full-width
+			width: 100%
+			max-width: 100%
+
+		&.fill-height
+			height: 100%
+
+		&:nth-of-type(4n+1)
+			::selection
+				background: $red
+
+			::-moz-selection
+				background: $red
+
+		&:nth-of-type(4n+2)
+			::selection
+				background: $blue
+
+			::-moz-selection
+				background: $blue
+
+		&:nth-of-type(4n+3)
+			::selection
+				background: $yellow
+
+			::-moz-selection
+				background: $yellow
+
+		&:nth-of-type(4n+4)
+			::selection
+				background: $green
+
+			::-moz-selection
+				background: $green
 
 	.vertical-center-container
-		@include contain((left, right), 12vw, 40px, 120px )
+		@include contain(( right, left ), 6vw, 40px, 60px )
 		@media screen and ( max-width: 500px )
 			@include contain((left, right), 4vw, 15px, 120px )
 		text-align: center

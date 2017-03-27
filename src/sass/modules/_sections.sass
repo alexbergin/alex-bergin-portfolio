@@ -20,6 +20,13 @@ section
 		transform: translate( 0, 0 )
 		opacity: 1
 
+		@media screen and ( max-width: 500px )
+			&:after
+				content: ""
+				display: block
+				height: 55px
+				background: $white
+
 		& ~ section
 			transform: translate( 100%, 0 )
 
@@ -109,6 +116,25 @@ section
 		padding-bottom: 0
 		padding-top: 0
 
+	.image-element
+		position: relative
+		background: inherit
+		overflow: hidden
+
+		&:before
+			content: ""
+			transition: transform 0.5s cubic-bezier(.45,0,.26,1)
+			position: absolute
+			background: inherit
+			width: 100%
+			height: 100%
+			left: 0
+			top: 0
+
+		&.image-loaded
+			&:before
+				transform: translate( 100%, 0 )
+
 	.column
 		display: inline-block
 		vertical-align: top
@@ -153,7 +179,13 @@ section
 		@include contain(( padding-top, padding-bottom ), 4vw, 15px, 60px )
 		box-sizing: border-box
 		position: relative
+		overflow: hidden
 		z-index: 2
+
+		img
+			width: 100%
+			height: auto
+			max-width: 1200px
 
 		@media screen and ( max-width: 500px )
 			@include contain(( padding-right, padding-left ), 4vw, 15px, 120px )
@@ -168,12 +200,17 @@ section
 		&.fill-height
 			height: 100%
 
+	.block
+
 		&:nth-of-type(4n+1)
 			::selection
 				background: $red
 
 			::-moz-selection
 				background: $red
+
+			.image-element.image-loaded:before
+				transform: translate( 0, -101% )
 
 		&:nth-of-type(4n+2)
 			::selection
@@ -182,6 +219,9 @@ section
 			::-moz-selection
 				background: $blue
 
+			.image-element.image-loaded:before
+				transform: translate( -101%, 0 )
+
 		&:nth-of-type(4n+3)
 			::selection
 				background: $yellow
@@ -189,12 +229,18 @@ section
 			::-moz-selection
 				background: $yellow
 
+			.image-element.image-loaded:before
+				transform: translate( 0, 101% )
+
 		&:nth-of-type(4n+4)
 			::selection
 				background: $green
 
 			::-moz-selection
 				background: $green
+
+			.image-element.image-loaded:before
+				transform: translate( 101%, 0 )
 
 	.vertical-center-container
 		@include contain(( right, left ), 6vw, 40px, 60px )

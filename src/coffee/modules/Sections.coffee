@@ -9,6 +9,7 @@ module.exports = class Sections extends SubClass
 		@.lastDetection = new Date().getTime()
 		@.getElements()
 		@.addListeners()
+		@.onShow @.pages[0]
 
 	getElements: ->
 
@@ -16,9 +17,13 @@ module.exports = class Sections extends SubClass
 
 	addListeners: ->
 
+		self = @
+
 		for page in @.pages
 			page.addEventListener "scroll", @.onScroll
 			page.lastScroll = page.scrollTop
+			page.onShow = ->
+				self.onShow @
 
 	onScroll: ( e ) =>
 
@@ -33,3 +38,16 @@ module.exports = class Sections extends SubClass
 			else vel = Math.max( vel, -6 )
 			@.root.background.setGlobalAcceleration 0, vel
 
+	onShow: ( page ) =>
+
+		images = page.querySelectorAll ".image-element"
+		for image in images
+			if image.classList.contains( "image-created" ) isnt true
+				image.classList.add "image-created"
+				img = document.createElement "img"
+				img.setAttribute "width", image.getAttribute "data-width"
+				img.setAttribute "height", image.getAttribute "data-height"
+				img.onload = ->
+					@.parentNode.classList.add "image-loaded"
+				image.appendChild img
+				img.setAttribute "src", image.getAttribute "data-src"

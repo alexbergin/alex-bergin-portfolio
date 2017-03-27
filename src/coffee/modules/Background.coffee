@@ -17,7 +17,7 @@ module.exports = class Background extends SubClass
 	density: window.devicePixelRatio or 1
 	colors: [ Colors.red, Colors.green, Colors.blue, Colors.yellow ]
 	options:
-		shapes: 16
+		shapes: 15
 		scale: 1
 
 	init: ->
@@ -57,7 +57,7 @@ module.exports = class Background extends SubClass
 			shape.velocity =
 				x: Math.sin( angle ) * power
 				y: Math.cos( angle ) * power
-				r: Math.random() * 0.05 - 0.025
+				r: Math.random() * 0.03 - 0.015
 			shape.position.x = ( @.width + 1000 ) * Math.random() - 500
 			shape.position.y = ( @.height + 1000 ) * Math.random() - 500
 			@.shapes.push shape
@@ -82,6 +82,10 @@ module.exports = class Background extends SubClass
 		for prefix in [ "webkitTransform", "mozTransform", "msTransform", "transform" ]
 			@.app.renderer.view.style[prefix + "Origin"] = "top left"
 			@.app.renderer.view.style[prefix] = "scale(#{1/@.density})"
+
+		scale = Math.max( @.width, @.height ) / 1200
+		for shape in @.shapes
+			shape.scale.x = shape.scale.y = scale
 
 	setGlobalAcceleration: ( x, y ) =>
 

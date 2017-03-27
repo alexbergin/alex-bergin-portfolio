@@ -1,6 +1,6 @@
 menu
 	transition: transform 0.35s cubic-bezier(.45,0,.26,1)
-	width: 400px
+	width: 350px
 	background: $red
 	height: 100%
 	position: absolute
@@ -14,8 +14,10 @@ menu
 		overflow: hidden
 		overflow-y: scroll
 		position: absolute
-		@include contain(( left, right ), 3vw, 10px, 40px )
+		@include contain(( padding-left, padding-right ), 3vw, 10px, 40px )
 		@include contain( top, 5.5vw, 26px, 70px )
+		left: 0
+		right: 0
 		bottom: 0
 		box-sizing: border-box
 
@@ -35,32 +37,23 @@ menu
 		h4
 			transform: translate( 0, 10% )
 			position: relative
+			display: inline-block
+			border-style: solid
+			border-color: transparent
 
-		&.selected
-			&:before, &:after
-				content: ""
-				position: absolute
-				@include contain(width, 0.4vw, 2px, 4px )
-				background: $black
-				height: 100%
-				top: 0
-
-			&:before
-				left: 0
-
-			&:after
-				right: 0
-
-		& + a
 			@include contain(border-width, 0.4vw, 2px, 4px )
-			border-top-style: solid
-			border-top-color: $black
+			@media screen and ( max-width: 500px )
+				@include contain( border-width, 0.8vw, 2px, 4px )
+
+		&.selected h4
+
+			border-color: $black
 
 	&.open
 		transform: translate( 0, 0 )
 
 		& ~ main
-			transform: translate( 400px, 0 )
+			transform: translate( 350px, 0 )
 
 	@media screen and ( max-width: 500px )
 		width: 100%

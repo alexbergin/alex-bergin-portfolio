@@ -8,7 +8,7 @@ module.exports =
 
 		if density > 1 then density *= 0.65
 
-		scale = 500 / ( 1.5 * ( density ))
+		scale = 700 / ( 1.5 * ( density ))
 		graphics = new PIXI.Graphics()
 
 		graphics.beginFill 0xffffff
@@ -25,7 +25,7 @@ module.exports =
 
 		if density > 1 then density *= 0.65
 
-		scale = 150 / ( 1.5 * ( density ))
+		scale = 250 / ( 1.5 * ( density ))
 		graphics = new PIXI.Graphics()
 
 		graphics.beginFill 0xffffff
@@ -42,7 +42,7 @@ module.exports =
 
 		if density > 1 then density *= 0.65
 
-		scale = 400 / ( 1.5 * ( density ))
+		scale = 600 / ( 1.5 * ( density ))
 		graphics = new PIXI.Graphics()
 
 		graphics.beginFill 0xffffff
@@ -60,7 +60,7 @@ module.exports =
 
 		if density > 1 then density *= 0.65
 
-		scale = 175 / ( 1.5 * ( density ))
+		scale = 300 / ( 1.5 * ( density ))
 		graphics = new PIXI.Graphics()
 		p = 0
 		t = 3

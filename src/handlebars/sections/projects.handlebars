@@ -4,6 +4,33 @@
 		<div class="vertical-center-container">
 			<h1>{{{projectName}}}</h1>
 		</div>
+		<div class="scroll-indicator"></div>
 	</div>
+	{{#layout}}
+		{{#columns}}
+		<div class="
+			block no-padding full-width transparent-background
+			{{left.background}}-left-background
+			{{right.background}}-right-background">
+			{{#left}}
+			<div class="column {{background}}-background {{style}}">
+				{{> partials/contents }}
+			</div>
+			{{/left}}
+			{{#right}}
+			<div class="column {{background}}-background {{style}}">
+				{{> partials/contents }}
+			</div>
+			{{/right}}
+		</div>
+		{{/columns}}
+		{{#block}}
+		<div class="block no-padding full-width transparent-background">
+			<div class="block {{style}}">
+				{{> partials/contents }}
+			</div>
+		</div>
+		{{/block}}
+	{{/layout}}
 </section>
 {{/projects}}

@@ -128,7 +128,7 @@ section
 
 	.column
 		display: inline-block
-		vertical-align: top
+		vertical-align: middle
 		width: 50%
 		max-width: 600px
 		text-align: left
@@ -152,9 +152,7 @@ section
 
 		& > .block
 			display: inline-block
-
-			@media screen and ( max-width: 1200px )
-				text-align: left
+			text-align: left
 
 		&:before, &:after
 			content: ""
@@ -186,6 +184,9 @@ section
 
 		@media screen and ( max-width: 500px )
 			@include contain(( padding-right, padding-left ), 4vw, 15px, 120px )
+
+		&.extra-vertical-padding
+			@include contain(( padding-top, padding-bottom ), 8vw, 60px, 80px )
 
 		&.no-padding
 			padding: 0

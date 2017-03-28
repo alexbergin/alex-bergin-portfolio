@@ -8,7 +8,9 @@ module.exports = class Router extends SubClass
 
 		@.getElements()
 		@.addListeners()
-		@.render()
+
+		requestAnimationFrame =>
+			@.render()
 
 	getElements: ->
 

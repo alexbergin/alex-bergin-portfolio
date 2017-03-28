@@ -1,3 +1,75 @@
 {
-	"projectName": "Bar Sans"
+	"projectName": "Bar Sans",
+	"layout": [
+		{
+			"columns": {
+				"left": {
+					"background": "blue",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/bar-sans/5.png",
+						"width": 720,
+						"height": 720
+					}
+				},
+				"right": {
+					"background": "white",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "Bar Sans was originally made for my Eight Mile project, complete with two other regular weights and a signage dingbat weight that could create a different sign using glyphs."
+						},
+						{
+							"tag": "p",
+							"value": "It was inspired by all of the old hand made signage found along Eight Mile boulevard."
+						}
+					]
+				}
+			}
+		},
+		{
+			"block": {
+				"style": "white-text yellow-background no-padding",
+				"image": {
+					"src": "assets/images/bar-sans/1.png",
+					"width": 1440,
+					"height": 720
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "red",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/bar-sans/4.png",
+						"width": 1440,
+						"height": 720
+					}
+				},
+				"right": {
+					"background": "white",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "Full uppercase set with numerals and common punctuation are included in the base font."
+						}
+					]
+				}
+			}
+		},
+		{
+			"block": {
+				"style": "white-text red-background no-padding",
+				"image": {
+					"src": "assets/images/bar-sans/6.png",
+					"width": 1440,
+					"height": 720
+				}
+			}
+		}
+	]
 }

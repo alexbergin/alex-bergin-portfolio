@@ -1,17 +1,18 @@
 .toggle-menu, .next-page, .previous-page, .scroll-indicator
 	@include element-reset
-	@include contain(border-width, 0.4vw, 2px, 4px )
-	@include contain(( width, height ), 4vw, 21px, 50px )
+	@include contain(border-width, 0.4vw, 3px, 4px )
+	@include contain(( width, height ), 3.5vw, 21px, 50px )
 	border-radius: 50%
 	box-sizing: border-box
 	border-color: $black
 	border-style: solid
 	position: fixed
 	transition: opacity 0.125s ease-in-out
-	z-index: 3
+	z-index: 5
 
 	@media screen and ( max-width: 500px )
 		@include contain(border-width, 0.8vw, 2px, 4px )
+		background: $white
 
 
 .toggle-menu
@@ -28,8 +29,8 @@
 
 	span
 		position: absolute
-		@include contain( height, 0.4vw, 2px, 4px )
-		@include contain( width, 1.75vw, 9px, 17px )
+		@include contain( height, 0.3vw, 2px, 4px )
+		@include contain( width, 1.5vw, 9px, 17px )
 		transition: transform 0.125s ease-in-out
 		background: $black
 		top: 50%
@@ -90,6 +91,7 @@
 	top: auto
 
 	@media screen and ( max-width: 500px )
+		background: none
 		bottom: 60px
 
 	&:before
@@ -98,7 +100,7 @@
 	
 
 .next-page
-	@include contain( right, 1.5vw, 5px, 20px )
+	@include contain( right, 1vw, 5px, 20px )
 	&:before
 		transform: translate( 47%, 0 ) rotate( 135deg )
 
@@ -108,7 +110,7 @@
 		right: 0
 
 .previous-page
-	@include contain( left, 1.5vw, 5px, 20px )
+	@include contain( left, 1vw, 5px, 20px )
 	&:before
 		transform: translate( -47%, 0 ) rotate( -45deg )
 

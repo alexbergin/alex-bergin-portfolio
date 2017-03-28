@@ -14,12 +14,12 @@ h1, h2, h3, h4, p
 			box-shadow: 0 -1000px 0 0 $black inset
 
 h1
-	@include contain( font-size, 8.5vw, 32px, 128px )
+	@include contain( font-size, 10vw, 32px, 128px )
 	text-transform: uppercase
 	letter-spacing: 0.1em
 	line-height: 100%
 
-	& + h2, & + h3, & + h4, & + h5, & + p
+	& + h1, & + h2, & + h3, & + h4, & + h5, & + p
 		@include contain( padding-top, 4.25vw, 16px, 64px )
 
 	font-family: $bold-font
@@ -38,7 +38,7 @@ h2
 	a
 		font-family: $light-italic-font
 
-	& + h1, & + h3, & + h4, & + h5, & + p
+	& + h1, & + h2, & + h3, & + h4, & + h5, & + p
 		@include contain( padding-top, 3vw, 9px, 19px )
 
 h3
@@ -47,11 +47,11 @@ h3
 	a
 		font-family: $regular-italic-font
 
-	& + h1, & + h2, & + h4, & + h5, & + p
+	& + h1, & + h2, & + h3, & + h4, & + h5, & + p
 		@include contain( padding-top, 3vw, 9px, 19px )
 
-h4, h5, p
-	@include contain( font-size, 4vw, 14px, 18px )
+h4, h5
+	@include contain( font-size, 4.5vw, 16px, 21px )
 
 h4
 	font-family: $bold-font
@@ -61,7 +61,7 @@ h4
 	a
 		font-family: $bold-italic-font
 
-	& + h1, & + h2, & + h3, & + h5, & + p
+	& + h1, & + h2, & + h3, & + h4, & + h5, & + p
 		@include contain( padding-top, 2vw, 7px, 9px )
 
 h5
@@ -71,15 +71,16 @@ h5
 	a
 		font-family: $light-italic-font
 
-	& + h1, & + h2, & + h3, & + h4, & + p
+	& + h1, & + h2, & + h3, & + h4, & + h5, & + p
 		@include contain( padding-top, 2vw, 7px, 9px )
 
 p
+	@include contain( font-size, 4vw, 14px, 18px )
 	letter-spacing: 0.025em
 	font-family: $regular-font
 
 	a
 		font-family: $regular-italic-font
 
-	& + h1, & + h2, & + h3, & + h4, & + h5
+	& + h1, & + h2, & + h3, & + h4, & + h5, & + p
 		@include contain( padding-top, 2vw, 7px, 9px )

@@ -8,7 +8,6 @@ module.exports = class Sections extends SubClass
 
 		@.getElements()
 		@.addListeners()
-		@.onShow @.pages[0]
 
 	getElements: ->
 

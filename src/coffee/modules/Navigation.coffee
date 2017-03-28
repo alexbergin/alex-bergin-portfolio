@@ -23,6 +23,9 @@ module.exports = class Navigation extends SubClass
 		@.previousButton.addEventListener "click", => @.step -1
 		@.menuButton.addEventListener "click", @.toggleMenu
 
+		if window.ontouchstart is null
+			document.querySelector("html").classList.add "is-touch"
+
 	toggleMenu: =>
 
 		if @.menu.classList.contains( "open" ) then @.closeMenu()

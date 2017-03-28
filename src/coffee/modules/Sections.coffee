@@ -25,6 +25,9 @@ module.exports = class Sections extends SubClass
 			page.onShow = ->
 				self.onShow @
 
+		window.addEventListener "resize", @.onResize
+		@.onResize()
+
 	onScroll: ( e ) =>
 
 		now = new Date().getTime()
@@ -51,3 +54,9 @@ module.exports = class Sections extends SubClass
 					@.parentNode.classList.add "image-loaded"
 				image.appendChild img
 				img.setAttribute "src", image.getAttribute "data-src"
+
+	onResize: =>
+
+		elements = document.querySelectorAll ".full-height"
+		for element in elements
+			element.style.height = "#{window.innerHeight}px"

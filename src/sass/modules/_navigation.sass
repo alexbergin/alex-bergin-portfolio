@@ -6,7 +6,7 @@
 	box-sizing: border-box
 	border-color: $black
 	border-style: solid
-	position: absolute
+	position: fixed
 	transition: opacity 0.125s ease-in-out
 	z-index: 3
 
@@ -84,6 +84,7 @@
 .scroll-indicator
 	@include contain( bottom, 1.5vw, 5px, 20px )
 	transform: translate( -50%, 0 )
+	position: absolute
 	border: none
 	left: 50%
 	top: auto

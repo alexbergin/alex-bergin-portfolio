@@ -7,8 +7,7 @@ section
 	opacity: 0
 	text-align: center
 	font-size: 0
-	height: 100%
-	width: 100%
+	right: 0
 	left: 0
 	top: 0
 
@@ -18,17 +17,15 @@ section
 	&.visible
 		overflow-y: auto
 		transform: translate( 0, 0 )
+		position: relative
 		opacity: 1
 
-		@media screen and ( max-width: 500px )
-			&:after
-				content: ""
-				display: block
-				height: 55px
-				background: $white
+		.image-element.image-loaded::before
+			transform: translate( 100%, 0 )
 
 		& ~ section
 			transform: translate( 100%, 0 )
+			position: absolute
 
 	.white-background, .white-left-background::before, .white-right-background::after
 		background: $white
@@ -112,9 +109,7 @@ section
 		background: transparent
 
 	.full-height
-		min-height: 100vh
-		padding-bottom: 0
-		padding-top: 0
+		padding: 0
 
 	.image-element
 		position: relative
@@ -130,10 +125,6 @@ section
 			height: 100%
 			left: 0
 			top: 0
-
-		&.image-loaded
-			&:before
-				transform: translate( 100%, 0 )
 
 	.column
 		display: inline-block

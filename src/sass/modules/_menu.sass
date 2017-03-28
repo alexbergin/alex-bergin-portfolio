@@ -3,7 +3,7 @@ menu
 	width: 350px
 	background: $red
 	height: 100%
-	position: absolute
+	position: fixed
 	top: 0
 	left: 0
 	transform: translate( -100%, 0 )
@@ -28,7 +28,7 @@ menu
 			bottom: 55px
 
 	a
-		@include contain( padding, 1vw, 2px, 15px )
+		@include contain( padding, 2vw, 5px, 25px )
 		text-decoration: none
 		color: $black
 		display: block
@@ -63,4 +63,4 @@ menu
 		transform: translate( 0, 100% )
 
 		&.open ~ main
-			transform: translate( 0, -100% )
+			transform: translate( 0, -100vh )

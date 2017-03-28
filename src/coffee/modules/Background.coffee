@@ -22,6 +22,7 @@ module.exports = class Background extends SubClass
 
 	init: ->
 
+		@.lastDetection = new Date().getTime()
 		@.makeApp()
 		@.makeShapes()
 		@.addListeners()
@@ -65,6 +66,43 @@ module.exports = class Background extends SubClass
 	addListeners: ->
 
 		window.addEventListener "resize", @.onResize
+		window.addEventListener "touchstart", @.onTouchStart
+		window.addEventListener "touchmove", @.onTouchMove
+		window.addEventListener "scroll", => 
+			@.onScroll document.body
+		document.body.lastScroll = 0
+
+	onScroll: ( page ) =>
+
+		now = new Date().getTime()
+		if now - @.lastDetection > 10
+			@.lastDetection = now
+			distance = page.scrollTop - page.lastScroll
+			page.lastScroll = page.scrollTop
+			vel = -distance / 25
+			if vel > 0 then vel = Math.min( vel, 6 )
+			else vel = Math.max( vel, -6 )
+			@.setGlobalAcceleration 0, vel
+
+	onTouchStart: ( e ) =>
+
+		@.lastTouch =
+			x: e.touches[0].clientX
+			y: e.touches[0].clientY
+
+	onTouchMove: ( e ) =>
+
+		if @.lastTouch?
+
+			rate = 0.0625
+			x = rate * ( e.touches[0].clientX - @.lastTouch.x )
+			y = rate * ( e.touches[0].clientY - @.lastTouch.y )
+
+			@.setGlobalAcceleration x, y
+
+		@.lastTouch =
+			x: e.touches[0].clientX
+			y: e.touches[0].clientY
 
 	onResize: =>
 

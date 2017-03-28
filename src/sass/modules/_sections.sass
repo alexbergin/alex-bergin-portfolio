@@ -138,6 +138,12 @@ section
 			max-width: 100%
 			width: 100%
 
+	& > .block:last-of-type
+		@media screen and ( max-width: 500px )
+			margin-bottom: 55px
+			&:first-of-type
+				margin-bottom: 0
+
 	.block
 		display: block
 		max-width: 1200px

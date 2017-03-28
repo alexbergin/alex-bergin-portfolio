@@ -1,4 +1,4 @@
-.toggle-menu, .next-page, .previous-page
+.toggle-menu, .next-page, .previous-page, .scroll-indicator
 	@include element-reset
 	@include contain(border-width, 0.4vw, 2px, 4px )
 	@include contain(( width, height ), 4vw, 21px, 50px )
@@ -49,7 +49,7 @@
 			transform: translate( -50%, 100% )
 
 
-.next-page, .previous-page
+.next-page, .previous-page, .scroll-indicator
 	transform: translate( 0, -50% ) scale( 1 )
 	top: 50%
 
@@ -60,7 +60,7 @@
 		transform: translate( 0, 0 ) scale( 1 )
 		top: auto
 		bottom: 0
-		width: 33%
+		width: 33.33333%
 
 	&:before
 		content: ""
@@ -80,6 +80,21 @@
 			@include contain(border-width, 0.8vw, 2px, 4px )
 			@include contain( width, 2vw, 7px, 13px )
 			@include contain( height, 2vw, 7px, 13px )
+
+.scroll-indicator
+	@include contain( bottom, 1.5vw, 5px, 20px )
+	transform: translate( -50%, 0 )
+	border: none
+	left: 50%
+	top: auto
+
+	@media screen and ( max-width: 500px )
+		bottom: 60px
+
+	&:before
+		transform: translate( -47%, 0 ) rotate( 225deg )
+
+	
 
 .next-page
 	@include contain( right, 1.5vw, 5px, 20px )

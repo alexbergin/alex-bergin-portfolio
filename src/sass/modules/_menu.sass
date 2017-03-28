@@ -12,9 +12,9 @@ menu
 
 	.wrapper
 		overflow: hidden
-		overflow-y: scroll
+		overflow-y: auto
 		position: absolute
-		@include contain(( padding-left, padding-right ), 3vw, 10px, 40px )
+		@include contain(( padding-left, padding-right ), 2vw, 10px, 20px )
 		@include contain( top, 5.5vw, 26px, 70px )
 		left: 0
 		right: 0
@@ -40,6 +40,7 @@ menu
 			display: inline-block
 			border-style: solid
 			border-color: transparent
+			border-top: none
 			border-left: none
 			border-right: none
 

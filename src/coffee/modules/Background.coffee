@@ -74,6 +74,9 @@ module.exports = class Background extends SubClass
 			document.body.classList.remove "resizing"
 		, 100
 
+		oldWidth = @.width
+		oldHeight = @.height
+
 		@.width = window.innerWidth
 		@.height = window.innerHeight
 
@@ -89,9 +92,13 @@ module.exports = class Background extends SubClass
 			@.app.renderer.view.style[prefix + "Origin"] = "top left"
 			@.app.renderer.view.style[prefix] = "scale(#{1/@.density})"
 
-		scale = ( Math.max( @.width, @.height ) / 1800 ) * @.density
+		@.options.scale = ( Math.max( @.width, @.height ) / 1800 ) * @.density
 		for shape in @.shapes
-			shape.scale.x = shape.scale.y = scale
+			shape.scale.x = shape.scale.y = @.options.scale
+			xp = shape.position.x / oldWidth
+			yp = shape.position.y / oldHeight
+			shape.position.x = xp * @.width
+			shape.position.y = yp * @.height
 
 	setGlobalAcceleration: ( x, y ) =>
 
@@ -123,21 +130,22 @@ module.exports = class Background extends SubClass
 			if shape.children[0].rotation < 0 then shape.children[0].rotation += 360
 
 			wrapped = false
+			buffer = 500 * @.options.scale
 
-			if shape.position.x < -200
-				shape.position.x = @.width + 200
+			if shape.position.x < -buffer
+				shape.position.x = @.width + buffer
 				wrapped = true
 
-			if shape.position.x > @.width + 200
-				shape.position.x = -200
+			if shape.position.x > @.width + buffer
+				shape.position.x = -buffer
 				wrapped = true
 				
-			if shape.position.y < -200
-				shape.position.y = @.height + 200
+			if shape.position.y < -buffer
+				shape.position.y = @.height + buffer
 				wrapped = true
 				
-			if shape.position.y > @.height + 200 
-				shape.position.y = -200
+			if shape.position.y > @.height + buffer
+				shape.position.y = -buffer
 				wrapped = true
 				
 			if wrapped then @.randomizeColor shape

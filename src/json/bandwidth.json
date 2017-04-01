@@ -1,3 +1,127 @@
 {
-	"projectName": "<span>Band</span><span>width</span>"
+	"projectName": "<span>Band</span><span>width</span>",
+	"layout": [
+		{
+			"columns": {
+				"left": {
+					"background": "red",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/bandwidth/1.png",
+						"width": 960,
+						"height": 1920
+					}
+				},
+				"right": {
+					"background": "yellow",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "h4",
+							"value": "Font + Brand"
+						},
+						{
+							"tag": "p",
+							"value": "Bar Sans was originally made for my Eight Mile project, complete with two other regular weights and a signage dingbat weight that could create a different sign using glyphs."
+						},
+						{
+							"tag": "p",
+							"value": "Together, these two typefaces were used to craft the core elements of the branding used on my team's proposal for the Eight Mile Boulevard Association."
+						}
+					]
+				}
+			}
+		},
+		{
+			"block": {
+				"style": "black-text transparent-background extra-vertical-padding",
+				"copy": [
+					{
+						"tag": "h4",
+						"value": "Why is this useful?"
+					},
+					{
+						"tag": "h2",
+						"value": "If you have this typeface, it's the only asset you need to create content in the visual style of 8MBA."
+					}
+				]
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "blue",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/bandwidth/2.png",
+						"width": 792,
+						"height": 792
+					}
+				},
+				"right": {
+					"background": "green",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/bandwidth/3.png",
+						"width": 792,
+						"height": 792
+					}
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "green",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "h4",
+							"value": "Dingbat Usage Key"
+						},
+						{
+							"tag": "p",
+							"value": "Each signage piece was assigned to a letter and used casing to determine direction: uppercase for left facing, lower case for right facing."
+						}
+					]
+				},
+				"right": {
+					"background": "yellow",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/bandwidth/4.png",
+						"width": 792,
+						"height": 792
+					}
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "yellow",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/bandwidth/5.png",
+						"width": 792,
+						"height": 792
+					}
+				},
+				"right": {
+					"background": "blue",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "h4",
+							"value": "Dingbat Usage Key"
+						},
+						{
+							"tag": "p",
+							"value": "Each signage piece was assigned to a letter and used casing to determine direction: uppercase for left facing, lower case for right facing."
+						}
+					]
+				}
+			}
+		}
+	]
 }

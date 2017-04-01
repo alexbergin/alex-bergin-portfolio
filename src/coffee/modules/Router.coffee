@@ -24,6 +24,8 @@ module.exports = class Router extends SubClass
 
 	render: =>
 
+		document.body.scrollTop = @.wrapper.scrollTop = 0
+
 		route = window.location.hash
 		rendered = false
 

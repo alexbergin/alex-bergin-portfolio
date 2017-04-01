@@ -30,10 +30,21 @@ html.is-touch
 	overflow: hidden
 
 	body
+		position: fixed
+		height: 100%
+		width: 100%
+		left: 0
+		top: 0
+
+	main
 		position: absolute
 		overflow-x: hidden
 		overflow-y: scroll
 		height: 100%
+		width: 100%
+		display: block
+		left: 0
+		top: 0
 
 main
 	transition: transform 0.35s cubic-bezier(.45,0,.26,1)
@@ -45,3 +56,6 @@ main
 
 .resizing *
 	transition: none !important
+
+.scroller
+	position: relative

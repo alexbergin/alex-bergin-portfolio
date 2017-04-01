@@ -66,8 +66,11 @@ module.exports = class Background extends SubClass
 	addListeners: ->
 
 		window.addEventListener "resize", @.onResize
+		window.addEventListener "mousedown", @.onTouchStart
 		window.addEventListener "touchstart", @.onTouchStart
+		window.addEventListener "mousemove", @.onTouchMove
 		window.addEventListener "touchmove", @.onTouchMove
+		window.addEventListener "mouseup", @.onTouchEnd
 		window.addEventListener "scroll", => 
 			@.onScroll document.body
 		document.body.lastScroll = 0
@@ -79,7 +82,7 @@ module.exports = class Background extends SubClass
 			@.lastDetection = now
 			distance = page.scrollTop - page.lastScroll
 			page.lastScroll = page.scrollTop
-			vel = -distance / 25
+			vel = -distance / 40
 			if vel > 0 then vel = Math.min( vel, 6 )
 			else vel = Math.max( vel, -6 )
 			@.setGlobalAcceleration 0, vel
@@ -87,22 +90,32 @@ module.exports = class Background extends SubClass
 	onTouchStart: ( e ) =>
 
 		@.lastTouch =
-			x: e.touches[0].clientX
-			y: e.touches[0].clientY
+			x: e.clientX or e.touches[0].clientX
+			y: e.clientY or e.touches[0].clientY
+		@.isDown = true
 
 	onTouchMove: ( e ) =>
 
-		if @.lastTouch?
+		if @.isDown
 
-			rate = 0.0625
-			x = rate * ( e.touches[0].clientX - @.lastTouch.x )
-			y = rate * ( e.touches[0].clientY - @.lastTouch.y )
+			cx = e.clientX or e.touches[0].clientX
+			cy = e.clientY or e.touches[0].clientY
 
-			@.setGlobalAcceleration x, y
+			if @.lastTouch?
 
-		@.lastTouch =
-			x: e.touches[0].clientX
-			y: e.touches[0].clientY
+				rate = 0.0625
+				x = rate * ( cx - @.lastTouch.x )
+				y = rate * ( cy - @.lastTouch.y )
+
+				@.setGlobalAcceleration x, y
+
+			@.lastTouch =
+				x: cx
+				y: cy
+
+	onTouchEnd: =>
+
+		@.isDown = false
 
 	onResize: =>
 

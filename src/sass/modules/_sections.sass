@@ -11,6 +11,12 @@ section
 	left: 0
 	top: 0
 
+	@media screen and ( max-width: 1500px )
+		@include contain(( padding-left, padding-bottom, padding-right ), 9vw, 5px, 100px)
+
+	@media screen and ( max-width: 500px )
+		@include contain(( padding-left, padding-bottom, padding-right ), 7vw, 5px, 30px)
+
 	&.not-visible *
 		display: none !important
 
@@ -107,7 +113,7 @@ section
 
 	.transparent-background, .transparent-left-background::before, .transparent-right-background::after
 		background: transparent
-
+			
 	.full-height
 		padding: 0
 
@@ -139,6 +145,9 @@ section
 			width: 100%
 
 	& > .block:last-of-type
+		@media screen and ( min-width: 1200px )
+			@include contain( margin-bottom, 8vw, 55px, 150px )
+
 		@media screen and ( max-width: 500px )
 			margin-bottom: 55px
 			&:first-of-type
@@ -153,6 +162,11 @@ section
 		& > .block
 			display: inline-block
 			text-align: left
+			box-shadow: none
+
+			@media screen and ( min-width: 900px )
+				h1, h2, h3, h4, h5, p
+					max-width: 80%
 
 		&:before, &:after
 			content: ""
@@ -162,6 +176,9 @@ section
 			max-width: 600px
 			width: 50%
 			top: 0
+
+			@media screen and ( max-width: 900px )
+				display: none
 
 		&:before
 			right: 50%
@@ -184,6 +201,7 @@ section
 
 		@media screen and ( max-width: 500px )
 			@include contain(( padding-right, padding-left ), 4vw, 15px, 120px )
+			@include contain(( padding-top, padding-bottom ), 6vw, 40px, 60px )
 
 		&.extra-vertical-padding
 			@include contain(( padding-top, padding-bottom ), 8vw, 60px, 80px )

@@ -1,4 +1,4 @@
-h1, h2, h3, h4, p
+h1, h2, h3, h4, h5, p
 	color: inherit
 	position: relative
 	line-height: 150%
@@ -8,13 +8,18 @@ h1, h2, h3, h4, p
 		position: relative
 		text-decoration: none
 		color: inherit
+		display: inline-block
+
+		box-shadow: 0 -2px 0 0 $black inset
 
 		&:hover
 			color: $white
 			box-shadow: 0 -1000px 0 0 $black inset
+			margin: 0 -3px
+			padding: 0 3px
 
 h1
-	@include contain( font-size, 10vw, 32px, 128px )
+	@include contain( font-size, 8vw, 32px, 128px )
 	text-transform: uppercase
 	letter-spacing: 0.1em
 	line-height: 100%
@@ -24,28 +29,20 @@ h1
 
 	font-family: $bold-font
 
-	a
-		font-family: $bold-italic-font
-
 h2, h3
 	@include contain( font-size, 6vw, 18px, 38px )
 	letter-spacing: 0.05em
-	line-height: 110%
+	line-height: 125%
 
 h2
 	font-family: $light-font
-
-	a
-		font-family: $light-italic-font
 
 	& + h1, & + h2, & + h3, & + h4, & + h5, & + p
 		@include contain( padding-top, 3vw, 9px, 19px )
 
 h3
 	font-family: $regular-font
-
-	a
-		font-family: $regular-italic-font
+	line-height: 130%
 
 	& + h1, & + h2, & + h3, & + h4, & + h5, & + p
 		@include contain( padding-top, 3vw, 9px, 19px )
@@ -58,9 +55,6 @@ h4
 	letter-spacing: 0.075em
 	text-transform: uppercase
 
-	a
-		font-family: $bold-italic-font
-
 	& + h1, & + h2, & + h3, & + h4, & + h5, & + p
 		@include contain( padding-top, 2vw, 7px, 9px )
 
@@ -68,19 +62,20 @@ h5
 	font-family: $light-font
 	letter-spacing: 0.05em
 
-	a
-		font-family: $light-italic-font
-
 	& + h1, & + h2, & + h3, & + h4, & + h5, & + p
 		@include contain( padding-top, 2vw, 7px, 9px )
 
 p
-	@include contain( font-size, 4vw, 14px, 18px )
-	letter-spacing: 0.025em
+	@include contain( font-size, 1.35vw, 13px, 18px )
+	letter-spacing: 0.01em
 	font-family: $regular-font
 
-	a
-		font-family: $regular-italic-font
+	@media screen and ( max-width: 900px )
+		@include contain( font-size, 3vw, 13px, 18px )
 
 	& + h1, & + h2, & + h3, & + h4, & + h5, & + p
 		@include contain( padding-top, 2vw, 7px, 9px )
+
+span.hanging
+	position: absolute
+	transform: translate( -100%, 0 )

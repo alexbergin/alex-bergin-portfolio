@@ -18,33 +18,46 @@
 					"copy": [
 						{
 							"tag": "h4",
-							"value": "Font + Brand"
+							"value": "Monitoring + Plotting"
 						},
 						{
 							"tag": "p",
-							"value": "Bar Sans was originally made for my Eight Mile project, complete with two other regular weights and a signage dingbat weight that could create a different sign using glyphs."
-						},
-						{
-							"tag": "p",
-							"value": "Together, these two typefaces were used to craft the core elements of the branding used on my team's proposal for the Eight Mile Boulevard Association."
+							"value": "Using a network monitoring program, I tracked my data consumption through my computer over the course of 3 days. Then, this information was plotted in 8 different ways using time, upload, and download rates. While each tile is able to stand on its own, the final piece contains all versions printed onto 11x22\" transparency."
 						}
 					]
 				}
 			}
 		},
 		{
-			"block": {
-				"style": "black-text transparent-background extra-vertical-padding",
-				"copy": [
-					{
-						"tag": "h4",
-						"value": "Why is this useful?"
-					},
-					{
-						"tag": "h2",
-						"value": "If you have this typeface, it's the only asset you need to create content in the visual style of 8MBA."
-					}
-				]
+			"columns": {
+				"left": {
+					"background": "red",
+					"style": "black-text extra-vertical-padding",
+					"copy": [
+						{
+							"tag": "h2",
+							"value": "563mb"
+						},
+						{
+							"tag": "p",
+							"value": "Total Downloaded"
+						}
+					]
+				},
+				"right": {
+					"background": "blue",
+					"style": "black-text extra-vertical-padding",
+					"copy": [
+						{
+							"tag": "h2",
+							"value": "13mb"
+						},
+						{
+							"tag": "p",
+							"value": "Total Uploaded"
+						}
+					]
+				}
 			}
 		},
 		{
@@ -76,12 +89,8 @@
 					"style": "black-text",
 					"copy": [
 						{
-							"tag": "h4",
-							"value": "Dingbat Usage Key"
-						},
-						{
 							"tag": "p",
-							"value": "Each signage piece was assigned to a letter and used casing to determine direction: uppercase for left facing, lower case for right facing."
+							"value": "As the project went on, new vectors were added that needed to be plotted. Adding time gives some insight to what I may have been doing while collecting this information."
 						}
 					]
 				},
@@ -108,18 +117,80 @@
 					}
 				},
 				"right": {
-					"background": "blue",
+					"background": "transparent",
 					"style": "black-text",
 					"copy": [
 						{
-							"tag": "h4",
-							"value": "Dingbat Usage Key"
-						},
-						{
-							"tag": "p",
-							"value": "Each signage piece was assigned to a letter and used casing to determine direction: uppercase for left facing, lower case for right facing."
+							"tag": "h2",
+							"value": "Type scale is very effective at illustrating quantity differences."
 						}
 					]
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "red",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "Using a high definition video as an example allowed the somewhat abstract amount of data transferred to be more easily comprehended."
+						}
+					]
+				},
+				"right": {
+					"background": "yellow",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/bandwidth/6.png",
+						"width": 792,
+						"height": 792
+					}
+				}
+			}
+		},
+		{
+			"block": {
+				"style": "white-text no-padding red-background",
+				"image": {
+					"src": "assets/images/bandwidth/9.png",
+					"width": 792,
+					"height": 792
+				}
+			}
+		},
+		{
+			"block": {
+				"style": "black-text yellow-background",
+				"copy": [
+					{
+						"tag": "h2",
+						"value": "Using pictures as a metric also highlight the different quantities in a way easily grasped."
+					}
+				]
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "green",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/bandwidth/7.png",
+						"width": 792,
+						"height": 792
+					}
+				},
+				"right": {
+					"background": "blue",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/bandwidth/8.png",
+						"width": 792,
+						"height": 792
+					}
 				}
 			}
 		}

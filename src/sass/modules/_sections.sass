@@ -117,6 +117,18 @@ section
 	.full-height
 		padding: 0
 
+	.iframe-element
+		position: relative
+		height: 0
+		z-index: 3
+
+		iframe
+			position: absolute
+			height: 100%
+			width: 100%
+			left: 0
+			top: 0
+
 	.image-element
 		position: relative
 		background: inherit
@@ -215,6 +227,10 @@ section
 
 		&.fill-height
 			height: 100%
+
+		&.desktop-spacing		
+			@media screen and ( max-width: 900px )
+				display: none
 
 	.block
 

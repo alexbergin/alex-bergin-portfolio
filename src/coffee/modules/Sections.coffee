@@ -20,6 +20,8 @@ module.exports = class Sections extends SubClass
 		for page in @.pages
 			page.onShow = ->
 				self.onShow @
+			page.onHidden = ->
+				self.onHidden @
 
 		window.addEventListener "resize", @.onResize
 		@.onResize()
@@ -37,6 +39,42 @@ module.exports = class Sections extends SubClass
 					@.parentNode.classList.add "image-loaded"
 				image.appendChild img
 				img.setAttribute "src", image.getAttribute "data-src"
+
+		frames = page.querySelectorAll ".iframe-element"
+		for frame in frames
+			if frame.classList.contains( "frame-created" ) isnt true
+
+				desktopOnly = frame.getAttribute "desktop-only"
+				frame.classList.add "frame-created"
+
+				canMake = true
+				if desktopOnly is "true" and typeof window.ontouchstart isnt "undefined"
+					canMake = false
+
+				if canMake
+					element = document.createElement "iframe"
+					
+					width = frame.getAttribute "data-width"
+					height = frame.getAttribute "data-height"
+
+					ratio = "#{height / width * 100}%"
+					frame.style.paddingBottom = ratio
+
+					element.setAttribute "width", width
+					element.setAttribute "height", height
+					element.setAttribute "frameborder", 0
+					element.setAttribute "scrolling", "no"
+
+					frame.appendChild element
+					element.setAttribute "src", frame.getAttribute "data-src"
+
+	onHidden: ( page ) =>
+
+		frames = page.querySelectorAll ".iframe-element"
+		for frame in frames
+			frame.classList.remove "frame-created"
+			element = frame.querySelector "iframe"
+			element?.parentNode.removeChild element
 
 	onResize: =>
 

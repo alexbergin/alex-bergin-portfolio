@@ -87,10 +87,9 @@ gulp.task('templates', function () {
         "peanuts",
         "trolls",
         "8mba",
-        "shinola",
         "bandwidth",
         "games",
-        "print"
+        "physical"
       ],
       data = {},
       options = {

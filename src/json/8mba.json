@@ -1,3 +1,108 @@
 {
-	"projectName": "8MBA"
+	"projectName": "8MBA",
+	"layout": [
+		{
+			"block": {
+				"style": "white-text blue-background no-padding",
+				"image": {
+					"src": "assets/images/8mba/1.jpg",
+					"width": 1280,
+					"height": 857
+				}
+			}
+		},
+		{
+			"block": {
+				"style": "desktop-spacing"
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "green",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "This was a sponsored project for the Eight Mile Boulevard Association undertaken at CCS that I worked on with Karen Urquiola. The project began with initial research into Eight Mile, types of information systems that related to the boulevard, and several client presentations."
+						}
+					]
+				},
+				"right": {
+					"background": "green",
+					"style": "black-text no-padding",
+					"image": {
+						"src": "assets/images/8mba/3.jpg",
+						"width": 1280,
+						"height": 857
+					}
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "yellow",
+					"style": "black-text no-padding",
+					"image": {
+						"src": "assets/images/8mba/2.jpg",
+						"width": 1280,
+						"height": 857
+					}
+				},
+				"right": {
+					"background": "yellow",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "Over the course of a semester, the team I worked with developed a new identity system for 8MBA that included a custom typeface with 7 weights (one of which was a dingbat weight that produced the unique signage) and all of the printed material you see here as well as a brand guidelines book."
+						}
+					]
+				}
+			}
+		},
+		{
+			"block": {
+				"style": "desktop-spacing"
+			}
+		},
+		{
+			"block": {
+				"style": "white-text red-background no-padding",
+				"image": {
+					"src": "assets/images/8mba/4.jpg",
+					"width": 1440,
+					"height": 720
+				}
+			}
+		},
+		{
+			"block": {
+				"style": "desktop-spacing"
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "red",
+					"style": "black-text no-padding",
+					"image": {
+						"src": "assets/images/8mba/5.jpg",
+						"width": 1280,
+						"height": 857
+					}
+				},
+				"right": {
+					"background": "blue",
+					"style": "black-text no-padding",
+					"image": {
+						"src": "assets/images/8mba/6.jpg",
+						"width": 1280,
+						"height": 857
+					}
+				}
+			}
+		}
+	]
 }

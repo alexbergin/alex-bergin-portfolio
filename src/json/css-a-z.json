@@ -1,3 +1,15 @@
 {
-	"projectName": "CSS A-Z"
+	"projectName": "CSS A-Z",
+	"layout": [
+		{
+			"block": {
+				"style": "white-text no-padding blue-background",
+				"iframe": {
+					"src": "https://codepen.io/abergin/full/podtK/",
+					"width": 1200,
+					"height": 900
+				}
+			}
+		}
+	]
 }

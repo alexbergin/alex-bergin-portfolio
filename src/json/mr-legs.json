@@ -1,3 +1,137 @@
 {
-	"projectName": "Mr. Legs"
+	"projectName": "Mr. Legs",
+	"layout": [
+		{
+			"columns": {
+				"left": {
+					"background": "green",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "Mr Legs was created for Ludum Dare 33 over the course of a single weekend. The goal of the game is to knock over as many towers as you can without letting your body hit the floor."
+						}
+					]
+				},
+				"right": {
+					"background": "red",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/mr-legs/3.jpg",
+						"width": 1280,
+						"height": 927
+					}
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "green",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/mr-legs/2.jpg",
+						"width": 949,
+						"height": 617
+					}
+				},
+				"right": {
+					"background": "yellow",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "h4",
+							"value": "How to Play"
+						},
+						{
+							"tag": "p",
+							"value": "Using the QW+OP keys, you can control extending and retracting Mr. Legs' legs. If you're on a device with a keyboard, give it a try below."
+						}
+					]
+				}
+			}
+		},
+		{
+			"block": {
+				"style": "desktop-spacing"
+			}
+		},
+		{
+			"block": {
+				"style": "white-text no-padding yellow-background",
+				"iframe": {
+					"src": "http://alexberg.in/ludum-dare-33",
+					"width": 1200,
+					"height": 900,
+					"desktopOnly": true
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "white",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/mr-legs/1.jpg",
+						"width": 827,
+						"height": 553
+					}
+				},
+				"right": {
+					"background": "blue",
+					"style": "black-text extra-vertical-padding",
+					"copy": [
+						{
+							"tag": "h4",
+							"value": "How it was made"
+						},
+						{
+							"tag": "p",
+							"value": "Three.js is used to generate the visuals and cannon.js is used for physics. Everything except for Mr. Legs' head is constructed from primitives in code. The head was created in Sketchup."
+						}
+					]
+				}
+			}
+		},
+		{
+			"block": {
+				"style": "black-text transparent-background extra-vertical-padding",
+				"copy": [
+					{
+						"tag": "h2",
+						"value": "Want to participate in the next Ludum Dare? <a href=\"https://ldjam.com/\" target=\"_blank\">Sign up here!</a>"
+					}
+				]
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "red",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "h4",
+							"value": "Challenges Encountered"
+						},
+						{
+							"tag": "p",
+							"value": "The hardest part of this project (or any Ludum Dare project) was deciding what features to keep and what to cut. Making sure you come up with a scope you can surely meet is a great restriction and encourages creative solutions you might have never considered."
+						}
+					]
+				},
+				"right": {
+					"background": "yellow",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "I really learned a lot about creating in three dimensions with this game. Having to work quickly really forced me to consider how things will work in the broadest sense, so I learned a lot of the basics."
+						}
+					]
+				}
+			}
+		}
+	]
 }

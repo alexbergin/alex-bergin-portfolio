@@ -1,3 +1,348 @@
 {
-	"projectName": "Physical"
+	"projectName": "Physical",
+	"layout": [
+		{
+			"columns": {
+				"left": {
+					"background": "yellow",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "h4",
+							"value": "Crust"
+						},
+						{
+							"tag": "p",
+							"value": "Crust is a short recipe book that contains instructions for preparing desserts and appetizers, the \"crusts\" of a meal. The book uses transparencies to hold cards that each have a photo the different foods and their respective recipes."
+						}
+					]
+				},
+				"right": {
+					"background": "yellow",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/1-1.png",
+						"width": 736,
+						"height": 493
+					}
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "yellow",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/1-3.png",
+						"width": 736,
+						"height": 493
+					}
+				},
+				"right": {
+					"background": "yellow",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/1-3.png",
+						"width": 736,
+						"height": 493
+					}
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "yellow",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/1-4.png",
+						"width": 736,
+						"height": 493
+					}
+				},
+				"right": {
+					"background": "yellow",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "The cover was hand cut and the pages sewn together with red thread. I cooked and photographed all of the food on the cards myself."
+						}
+					]
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "yellow",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/1-5.png",
+						"width": 736,
+						"height": 493
+					}
+				},
+				"right": {
+					"background": "yellow",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/1-6.png",
+						"width": 736,
+						"height": 493
+					}
+				}
+			}
+		},
+		{
+			"block": {
+				"style": "desktop-spacing"
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "red",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "h4",
+							"value": "Fontabet"
+						},
+						{
+							"tag": "p",
+							"value": "The Fontabet book was made in an elective bookmaking class. I cut up old gold spine children's books to make the cover and then used a stenciling technique to pair each letter of the alphabet with a matching typeface."
+						}
+					]
+				},
+				"right": {
+					"background": "red",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/2-1.png",
+						"width": 736,
+						"height": 493
+					}
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "red",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/2-2.png",
+						"width": 736,
+						"height": 493
+					}
+				},
+				"right": {
+					"background": "red",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/2-3.png",
+						"width": 736,
+						"height": 493
+					}
+				}
+			}
+		},
+		{
+			"block": {
+				"style": "desktop-spacing"
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "blue",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "h4",
+							"value": "Quotes on </br >Business & Design"
+						}
+					]
+				},
+				"right": {
+					"background": "blue",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/3-1.png",
+						"width": 736,
+						"height": 493
+					}
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "blue",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/3-2.png",
+						"width": 736,
+						"height": 493
+					}
+				},
+				"right": {
+					"background": "blue",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "This book was designed near the end of my business practices class as a summary of what we learned about business and design while taking the course."
+						}
+					]
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "blue",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/3-3.png",
+						"width": 736,
+						"height": 493
+					}
+				},
+				"right": {
+					"background": "blue",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/3-4.png",
+						"width": 736,
+						"height": 493
+					}
+				}
+			}
+		},
+		{
+			"block": {
+				"style": "desktop-spacing"
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "green",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "h4",
+							"value": "Vis Com I"
+						},
+						{
+							"tag": "p",
+							"value": "Project one of Visual Communication I called for a utilitarian object, devoid of stylization that we would research and document."
+						}
+					]
+				},
+				"right": {
+					"background": "green",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/4-1.png",
+						"width": 736,
+						"height": 519
+					}
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "green",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/4-2.png",
+						"width": 736,
+						"height": 519
+					}
+				},
+				"right": {
+					"background": "green",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/4-3.png",
+						"width": 736,
+						"height": 519
+					}
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "green",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/4-4.png",
+						"width": 736,
+						"height": 519
+					}
+				},
+				"right": {
+					"background": "green",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "The photos were taken to show action, rest, parts, and every angle imaginable. The similarities between the styles of photographs taken and the way we are taught to lay out text in type I were intriguing."
+						}
+					]
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "green",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/4-5.png",
+						"width": 736,
+						"height": 519
+					}
+				},
+				"right": {
+					"background": "green",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/4-6.png",
+						"width": 736,
+						"height": 519
+					}
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "green",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "As the crits went by, type was gradually integrated into the square compositions with varying amounts of hierarchy. The final image and type compositions were mounted on foam board and put on display."
+						}
+					]
+				},
+				"right": {
+					"background": "green",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/physical/4-7.png",
+						"width": 736,
+						"height": 519
+					}
+				}
+			}
+		}
+	]
 }

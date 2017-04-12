@@ -1,3 +1,75 @@
 {
-	"projectName": "Trolls"
+	"projectName": "Trolls",
+	"layout": [
+		{
+			"block": {
+				"style": "green-background white-text no-padding",
+				"image": {
+					"src": "assets/images/trolls/1.png",
+					"width": 1920,
+					"height": 1080
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "yellow",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "<a href=\"https://www.dreamworks.com/trollify/\" target=\"_blank\">Trollify Yourself</a> was a character creator made for to promote the Dreamworks film Trolls. After completing the Peanuts character creator, we had a solid project foundation that allowed us to allocate more time to new features."
+						},
+						{
+							"tag": "p",
+							"value": "Colors were handled in two ways - using variable hue and pre made with set hue, saturation, luminance. This allowed extreme flexibility on assets where exact color didn’t need to be precise (shoes, shirts, ect.) and still gave us the option to define set colors where accuracy was needed."
+						}
+					]
+				},
+				"right": {
+					"background": "transparent",
+					"style": "white-text",
+					"image": {
+						"src": "assets/images/trolls/2.png",
+						"width": 462,
+						"height": 981
+					}
+				}
+			}
+		},
+		{
+			"columns": {
+				"right": {
+					"background": "green",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "One of the biggest new features and greatest challenge of the project was creating the interactive hair. A lot of effort and testing went into making sure the hair looked and behaved as you would expect the hair of a troll doll would. <a href=\"https://github.com/pixijs/pixi.js\" target=\"_blank\">PIXI.js</a> was selected for how easy it makes working in WebGL and for its filter and sprite system. I selected <a href=\"https://github.com/schteppe/p2.js\" target=\"_blank\">P2.js</a> for the physics system for its spring behavior."
+						}
+					]
+				},
+				"left": {
+					"background": "red",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/trolls/3.gif",
+						"width": 500,
+						"height": 457
+					}
+				}
+			}
+		},
+		{
+			"block": {
+				"style": "yellow-background white-text no-padding",
+				"image": {
+					"src": "assets/images/trolls/4.png",
+					"width": 1920,
+					"height": 1080
+				}
+			}
+		}
+	]
 }

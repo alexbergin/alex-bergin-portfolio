@@ -1,3 +1,75 @@
 {
-	"projectName": "Peanuts"
+	"projectName": "Peanuts",
+	"layout": [
+		{
+			"block": {
+				"style": "red-background white-text no-padding",
+				"image": {
+					"src": "assets/images/peanuts/1.png",
+					"width": 1427,
+					"height": 810
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "yellow",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "The <a href=\"http://www.peanutizeme.com/\" target=\"_blank\">Peanuts Character Creator</a> was created by a team at Ludomade as an interactive promotional piece for the Peanuts Movie. On this team, I handled developing the interface and pages surrounding the creator as well as assisting with asset export and positioning."
+						}
+					]
+				},
+				"right": {
+					"background": "red",
+					"style": "no-padding white-text",
+					"image": {
+						"src": "assets/images/peanuts/2.gif",
+						"width": 486,
+						"height": 600
+					}
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "transparent",
+					"style": "white-text",
+					"image": {
+						"src": "assets/images/peanuts/3.png",
+						"width": 460,
+						"height": 980
+					}
+				},
+				"right": {
+					"background": "green",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "There were a lot of unknowns with this site at the outset. Our studio had never done a character creator of this scale or complexity before. One of the greatest challenges was designing and developing the interface in a way that worked well on small touch devices and large desktop screens."
+						},
+						{
+							"tag": "p",
+							"value": "Peanuts gave us new insights on how this genre of interactive site should work and paved the way for many more character creator projects."
+						}
+					]
+				}
+			}
+		},
+		{
+			"block": {
+				"style": "blue-background white-text no-padding",
+				"image": {
+					"src": "assets/images/peanuts/4.png",
+					"width": 1427,
+					"height": 810
+				}
+			}
+		}
+	]
 }

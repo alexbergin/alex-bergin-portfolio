@@ -2,13 +2,87 @@
 	"projectName": "CSS A-Z",
 	"layout": [
 		{
-			"block": {
-				"style": "white-text no-padding blue-background",
-				"iframe": {
-					"src": "https://codepen.io/abergin/full/podtK/",
-					"width": 1200,
-					"height": 900
+			"columns": {
+				"left": {
+					"background": "red",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/css-a-z/1.gif",
+						"width": 713,
+						"height": 713
+					}
+				},
+				"right": {
+					"background": "yellow",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "This was a self initiated project with the goal being to deepen my knowledge of how CSS can be used to create images and animation. I chose to use each letter of the alphabet to select a word that I would attempt to illustrate and animate using only CSS."
+						}
+					]
 				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "green",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "One animation was created in a few hours each day over the course of a month. I chose to use a simple flat illustrative style because it was the easiest to render with CSS. Initially, I was doing all of my animations by hand but <a href=\"http://alexberg.in/keyframer/\" target=\"_blank\">developed a tool</a> to help visualize animation components and output the code required."
+						}
+					]
+				},
+				"right": {
+					"background": "yellow",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/css-a-z/2.gif",
+						"width": 713,
+						"height": 713
+					}
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "blue",
+					"style": "white-text no-padding",
+					"image": {
+						"src": "assets/images/css-a-z/3.gif",
+						"width": 713,
+						"height": 713
+					}
+				},
+				"right": {
+					"background": "blue",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "p",
+							"value": "The greatest challenge of the project was finding a word for each letter that could be illustrated and animated in the time I set aside for myself in a way that matched the rest of the pieces in the series."
+						}
+					]
+				}
+			}
+		},
+		{
+			"block": {
+				"style": "red-background",
+				"copy": [
+					{
+						"tag": "h4",
+						"value": "Project Links"
+					},
+					{
+						"tag": "p",
+						"value": "<a href=\"http://alexberg.in/keyframer\">Keyframer Tool</a> | <a href=\"http://cssaz.tumblr.com\">Project Site</a>"
+					}
+				]
 			}
 		}
 	]

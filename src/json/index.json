@@ -1,4 +1,91 @@
 {
 	"pageName": "Home",
-	"message": "Hello world, looks like the build updates. <a href='#/mr-legs'>Here is an even longer link</a> is a link test."
+	"layout": [
+		{
+			"columns": {
+				"left": {
+					"background": "yellow",
+					"style": "no-padding white-text",
+					"image": {
+						"src": "assets/images/meta/hey-its-me.jpg",
+						"width": 960,
+						"height": 717
+					}
+				},
+				"right": {}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "blue",
+					"style": "black-text extra-vertical-padding",
+					"copy": [
+						{
+							"tag": "h2",
+							"value": "Experience"
+						},
+						{
+							"tag": "p",
+							"value": "A complete listing of major jobs and internships held since 2011."
+						}
+					]
+				},
+				"right": {
+					"background": "blue",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "h4",
+							"value": "Soap / Ludomade"
+						},
+						{
+							"tag": "p",
+							"value": "Web Developer"
+						},
+						{
+							"tag": "p",
+							"value": "<span class=\"sub\">June 2013 &ndash; March 2017<br />Los Angeles, CA</span>"
+						},
+						{
+							"tag": "h4",
+							"value": "<br/ >Little Things Labs"
+						},
+						{
+							"tag": "p",
+							"value": "Design Apprentice"
+						},
+						{
+							"tag": "p",
+							"value": "<span class=\"sub\">August 2012 &ndash; May 2013<br />Detroit, MI</span>"
+						},
+						{
+							"tag": "h4",
+							"value": "<br/ >Compuware"
+						},
+						{
+							"tag": "p",
+							"value": "Designer / Intern"
+						},
+						{
+							"tag": "p",
+							"value": "<span class=\"sub\">May 2012 &ndash; August 2012<br />Detroit, MI</span>"
+						},
+						{
+							"tag": "h4",
+							"value": "<br/ >ShannonLoren"
+						},
+						{
+							"tag": "p",
+							"value": "Designer / IT"
+						},
+						{
+							"tag": "p",
+							"value": "<span class=\"sub\">June 2011 &ndash; May 2012<br />Detroit, MI</span>"
+						}
+					]
+				}
+			}
+		}
+	]	
 }

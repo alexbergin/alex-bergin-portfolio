@@ -17,6 +17,13 @@ var coffee = require('gulp-coffee'),
     jshint = require('gulp-jshint'),
     fs = require('fs');
 
+// Copy favicons
+gulp.task('favicon', function() {
+  return gulp.src('src/favicon/**')
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.stream());
+});
+
 // Copy assets (fonts, images, videos, sounds, etc)
 gulp.task('assets', function() {
   gulp.src('src/index.html').pipe(gulp.dest('dist')).pipe(browserSync.stream());
@@ -81,14 +88,13 @@ gulp.task('templates', function () {
         "index"
       ],
       projects = [ 
-        "mr-legs", 
-        "bar-sans",
         "css-a-z",
+        "bar-sans",
+        "mr-legs", 
         "peanuts",
-        "trolls",
-        "8mba",
         "bandwidth",
-        "games",
+        "8mba",
+        "trolls",
         "physical"
       ],
       data = {},
@@ -146,6 +152,7 @@ gulp.task('serve', ['default'], function() {
 });
 
 gulp.task('default', [
+  'favicon',
   'templates',
   'scripts',
   'assets',

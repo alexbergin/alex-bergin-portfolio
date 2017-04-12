@@ -12,27 +12,76 @@
 						"height": 717
 					}
 				},
-				"right": {}
+				"right": {
+					"background": "yellow",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "h4",
+							"value": "About Me"
+						},
+						{
+							"tag": "p",
+							"value": "I love creating anything interactive - from designing installations to developing websites and games. My work over the past few years has been primarily in web development, but I also have a strong foundation in graphic design and experience in motion and print design."
+						}
+					]
+				}
 			}
 		},
 		{
 			"columns": {
 				"left": {
 					"background": "blue",
-					"style": "black-text extra-vertical-padding",
+					"style": "black-text",
 					"copy": [
 						{
-							"tag": "h2",
-							"value": "Experience"
+							"tag": "h4",
+							"value": "Contact Me"
 						},
 						{
 							"tag": "p",
-							"value": "A complete listing of major jobs and internships held since 2011."
+							"value": "You can best contact me by email at <a href=\"mailto:me@alexberg.in?subject=Hello!&body=I%20have%20a%20question%20for%20you%3A\">me@alexberg.in</a>."
 						}
 					]
 				},
 				"right": {
-					"background": "blue",
+					"background": "red",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "h4",
+							"value": "Follow Me"
+						},
+						{
+							"tag": "p",
+							"value": "I’m often posting and editing code experiments on <a href=\"https://codepen.io/abergin/\" target=\"_blank\">Codepen</a> and sharing thoughts on <a href=\"https://twitter.com/_AlexBergin\" target=\"_blank\">Twitter</a>."
+						}
+					]
+				}
+			}
+		},
+		{
+			"columns": {
+				"left": {
+					"background": "white",
+					"style": "black-text",
+					"copy": [
+						{
+							"tag": "h4",
+							"value": "Experience + Education"
+						},
+						{
+							"tag": "p",
+							"value": "I’ve worked in the majority of the Adobe suite but have the most experience with Photoshop, Illustrator, and InDesign. Development-wise, I’m experienced in working with: Sass/SCSS, Javascript/Coffeescript + several frameworks, and HTML + several templating languages."
+						},
+						{
+							"tag": "p",
+							"value": "I’ve completed 4 years towards a BA in Graphic Design at the <a href=\"http://www.collegeforcreativestudies.edu/\" target=\"_blank\">College for Creative Studies</a> in Detroit, MI."
+						}
+					]
+				},
+				"right": {
+					"background": "green",
 					"style": "black-text",
 					"copy": [
 						{
